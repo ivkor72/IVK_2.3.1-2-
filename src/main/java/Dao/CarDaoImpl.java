@@ -36,8 +36,6 @@ public class CarDaoImpl implements CarDao {
         }
         catch (Exception e) {
         }
-        if (count <= 0) count = cars.size();
-        if (count > cars.size()) count = cars.size();
         return cars.subList(0, count);
     }
 }
