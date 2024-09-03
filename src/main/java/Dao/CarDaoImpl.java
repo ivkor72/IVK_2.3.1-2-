@@ -30,12 +30,9 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public List<Cars> getCars(int count) {
-        try {
-            createCars();
-        }
-        catch (Exception e) {
-        }
-        return cars.subList(0, count);
+    public List<Cars> getCars(Long count) {
+
+        if (cars.isEmpty()) createCars();
+        return cars.subList(0, Math.toIntExact(count));
     }
 }

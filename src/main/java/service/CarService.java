@@ -7,6 +7,6 @@ import java.util.List;
 public interface CarService {
 
     List <Cars> createCars ();
-    List <Cars> getCars (int count);
+    List <Cars> getCars (Long count);
 
 }
