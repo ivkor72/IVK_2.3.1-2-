@@ -1,10 +1,10 @@
-package service;
+package dao;
 
 import model.Car;
-
 import java.util.List;
 
-public interface CarService {
+public interface CarDao {
+
     List<Car> createCars();
 
     List<Car> getCars(Long count);
