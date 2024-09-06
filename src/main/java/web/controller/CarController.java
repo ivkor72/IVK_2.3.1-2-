@@ -16,7 +16,7 @@ public class CarController {
     private final CarService carService = new CarServiceImpl();
 
     @GetMapping(value = "/cars")
-    public String cars(@RequestParam(defaultValue = "5", value = "carsCount") Long carsCount, ModelMap model) {
+    public String showCars(@RequestParam(defaultValue = "5", value = "carsCount") Long carsCount, ModelMap model) {
         if (carsCount > 5 | carsCount <= 0) carsCount = 5L;
         List<Car> carsList = carService.getCars(carsCount);
         model.addAttribute("carsList", carsList);
