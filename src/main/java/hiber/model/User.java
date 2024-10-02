@@ -1,6 +1,4 @@
-package model;
-
-import org.springframework.stereotype.Component;
+package hiber.model;
 
 import javax.persistence.*;
 

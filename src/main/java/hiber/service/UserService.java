@@ -1,7 +1,7 @@
-package service;
+package hiber.service;
 
 
-import model.User;
+import hiber.model.User;
 
 import java.util.List;
 
