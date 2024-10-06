@@ -1,14 +1,11 @@
 package hiber.dao;
 
 
-import hiber.config.appConfig;
 import hiber.model.User;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -19,11 +16,18 @@ import java.util.List;
 @Component
 public class UserDaoImpl implements UserDao {
 
+    @Autowired
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+
+    public AnnotationConfigApplicationContext getContext() {
+        return context;
+    }
 
     @PersistenceContext
     private EntityManager em;
 
-@Transactional
+
+    @Transactional
     @Override
     public List<User> getUsers() {
 

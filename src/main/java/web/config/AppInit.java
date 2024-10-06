@@ -1,8 +1,10 @@
 package web.config;
 
 import hiber.config.appConfig;
+import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -14,19 +16,20 @@ import javax.servlet.ServletRegistration;
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 
-//    @Override
-//    public void onStartup(ServletContext servletContext){
-//        AnnotationConfigApplicationContext context =
-//                new AnnotationConfigApplicationContext();
-//        context.register(appConfig.AppConfig.class);
-//
-//    }
+    @Override
+
+
+    public void onStartup(ServletContext servletContext){
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext();
+        context.register(appConfig.AppConfig.class);
+    }
 
     // Метод, указывающий на класс конфигурации
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
-        //return new Class[] {appConfig.class};
+
     }
 
 
